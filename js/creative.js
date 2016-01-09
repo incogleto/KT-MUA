@@ -7,6 +7,19 @@
 (function($) {
     "use strict"; // Start of use strict
 
+    $(document).ready(function() {
+        $('.thumb').click(function() {
+            $('.modal-body').empty();
+            var title = $(this).parent('a').attr("title");
+            $('.modal-title').html(title);
+            $($(this).html()).appendTo('.modal-body');
+            $('#myModal').find('i').remove();
+            $('#myModal').modal({
+                show: true
+            });
+        });
+    });
+
     // jQuery for page scrolling feature - requires jQuery Easing plugin
     $('a.page-scroll').bind('click', function(event) {
         var $anchor = $(this);
